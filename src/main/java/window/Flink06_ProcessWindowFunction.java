@@ -3,6 +3,7 @@ package window;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+
 import org.apache.flink.streaming.api.functions.windowing.ProcessWindowFunction;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 import org.apache.flink.util.Collector;
@@ -25,14 +26,17 @@ public class Flink06_ProcessWindowFunction {
                 });
 //                .process(new ProcessWindowFunction<Tuple2<String, Long>, Tuple2<String, Long>, String, TimeWindow>() {
 //                    @Override
-//                    public void process(String key, Context context, Iterable<Tuple2<String, Long>> elements, Collector<Tuple2<String, Long>> out) throws Exception {
+//                    public void process(String s, Context context, Iterable<Tuple2<String, Long>> elements, Collector<Tuple2<String, Long>> out) throws Exception {
 //                        System.out.println(context.window().getStart());
 //                        long sum = 0L;
 //                        for (Tuple2<String, Long> element : elements) {
 //                            sum += element.f1;
 //                        }
-//                        out.collect(Tuple2.of(key,sum));
+//                        out.collect(Tuple2.of(s,sum));
 //                    }
 //                })
+
+
+
     }
 }
